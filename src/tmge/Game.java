@@ -4,6 +4,7 @@ public abstract class Game {
 	private Grid grid;
 //	private Events events;
 	private int score;
+	//private
 	
 	public Game() {
 		this.score = 0;
@@ -13,6 +14,7 @@ public abstract class Game {
 	
 	
 	public abstract void update();
-	
-	//yeah
+
+	//intellij is the best please work
+	 
 }
