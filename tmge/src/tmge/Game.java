@@ -1,6 +1,6 @@
 package tmge;
 
-public class Game {
+abstract class Game {
     private Grid grid;
     private Events event;
     private int Score;
