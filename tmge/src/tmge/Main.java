@@ -2,6 +2,7 @@ package tmge;
 
 public class Main {
     public static void main(String args[]) {
-        System.out.println("Hello world!");
+        Game test = new Game();
+        System.out.println(test.getGrid().printGrid());
     }
 }
