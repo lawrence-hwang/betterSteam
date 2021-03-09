@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52e17572-25fe-428e-9682-2bf2296f2963" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmge/src/tmge/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmge/src/tmge/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/tmge/tmge/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmge/src/tmge/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/tmge/src/tmge/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
