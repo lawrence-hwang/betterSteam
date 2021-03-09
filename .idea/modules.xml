@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bejeweled/bejeweled.iml" filepath="$PROJECT_DIR$/bejeweled/bejeweled.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/betterSteam.iml" filepath="$PROJECT_DIR$/.idea/betterSteam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tetris/tetris.iml" filepath="$PROJECT_DIR$/tetris/tetris.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tmge/tmge.iml" filepath="$PROJECT_DIR$/tmge/tmge.iml" />
+    </modules>
+  </component>
+</project>
