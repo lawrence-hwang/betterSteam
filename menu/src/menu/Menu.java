@@ -46,7 +46,7 @@ public class Menu {
                     break;
                 }
                 case 2: {
-                    showHighScores();
+                    displayHighScores();
                     break;
                 }
                 case 3: {
