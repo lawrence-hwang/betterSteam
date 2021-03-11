@@ -2,7 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52e17572-25fe-428e-9682-2bf2296f2963" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/bejeweled/src/bejeweled/Bejeweled.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/menu/src/menu/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/menu/src/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmge/src/tmge/TileFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bejeweled/bejeweled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bejeweled/bejeweled.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bejeweled/src/bejeweled/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/tmge/tmge/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/tmge/tmge/Grid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/tmge/tmge/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmge/src/tmge/Events.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmge/src/tmge/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/tmge/src/tmge/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmge/src/tmge/GameManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmge/src/tmge/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/tmge/src/tmge/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmge/src/tmge/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmge/src/tmge/Matching.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmge/src/tmge/PieceType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmge/src/tmge/PlayerData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmge/src/tmge/Statistics.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +32,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="module-info" />
         <option value="Class" />
       </list>
     </option>
@@ -37,8 +57,9 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Menu">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="tmge.Main" />
       <module name="tmge" />
@@ -52,8 +73,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="menu.Menu" />
+      <module name="menu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Menu" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>

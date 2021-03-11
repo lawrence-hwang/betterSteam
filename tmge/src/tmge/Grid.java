@@ -26,8 +26,10 @@ public class Grid {
     public int[][] getGrid() {
         return grid;
     }
-
     public void setGrid(int[][] grid) {
         this.grid = grid;
+    }
+    public void setCell(int row, int col, int val) {
+        grid[row][col] = val;
     }
 }
