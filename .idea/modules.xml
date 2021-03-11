@@ -5,7 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/bejeweled/bejeweled.iml" filepath="$PROJECT_DIR$/bejeweled/bejeweled.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/betterSteam.iml" filepath="$PROJECT_DIR$/.idea/betterSteam.iml" />
       <module fileurl="file://$PROJECT_DIR$/menu/menu.iml" filepath="$PROJECT_DIR$/menu/menu.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tetris/tetris.iml" filepath="$PROJECT_DIR$/tetris/tetris.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tfe/tfe.iml" filepath="$PROJECT_DIR$/tfe/tfe.iml" />
       <module fileurl="file://$PROJECT_DIR$/tmge/tmge.iml" filepath="$PROJECT_DIR$/tmge/tmge.iml" />
     </modules>
   </component>
