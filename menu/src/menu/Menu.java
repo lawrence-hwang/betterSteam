@@ -69,12 +69,51 @@ public class Menu {
                 }
                 case 2: {
                     // PLAY BEJEWELED
-                    Bejeweled game = new Bejeweled();
-                    game.startGame();
-                    int highScore = game.quit();
-                    int[] updatedScores = {users.get(currentUser)[0], highScore};
-                    users.put(currentUser, updatedScores);
-                    break;
+                    input = getIntInput("Single or Multiplayer?\n"+"1) Single\n" + "2) Multiplayer\nEnter option as integer: ");
+                    switch(input){
+                        case 1:{
+                            Bejeweled game = new Bejeweled();
+                            game.startGame();
+                            int highScore = game.quit();
+                            int[] updatedScores = {users.get(currentUser)[0], highScore};
+                            users.put(currentUser, updatedScores);
+                            break;
+                        }
+                        case 2:{
+                            // Get other player name
+                            String name = getStringInput("Enter player 2's name: ");
+                            // Add other player to list of users
+                            if (!users.containsKey(name)) {
+                                users.put(name, new int[2]);
+                            }
+                            // Begin player 1 game
+                            Bejeweled game = new Bejeweled();
+                            game.startGame();
+                            int highScore = game.quit();
+                            int[] updatedScores = {users.get(currentUser)[0], highScore};
+                            users.put(currentUser, updatedScores);
+
+                            // Begin player 2 game
+                            System.out.println("It's now " + name + "'s turn to play!");
+                            game = new Bejeweled();
+                            game.startGame();
+                            int highScore2 = game.quit();
+                            int[] updatedScores2 = {users.get(name)[0], highScore2};
+                            users.put(name, updatedScores2);
+
+                            //Print winner
+                            if(highScore > highScore2){
+                                System.out.println(currentUser + " wins with a score of " + highScore + " over " + name + "'s score of " + highScore2 + "!");
+                            }
+                            else if(highScore2 > highScore){
+                                System.out.println(name + " wins with a score of " + highScore2 + " over " + currentUser + "'s score of " + highScore + "!");
+                            }
+                            else {
+                                System.out.println("Wow, you both tied! Nice job!");
+                            }
+                            break;
+                        }
+                    }
                 }
                 case 3: {
                     // SETTINGS
