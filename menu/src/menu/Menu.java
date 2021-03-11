@@ -1,5 +1,7 @@
 package menu;
 
+import bejeweled.Bejeweled;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -37,7 +39,7 @@ public class Menu {
 
             switch (input) {
                 case 1: {
-                    String name = getStringInput("Enter username");
+                    String name = getStringInput("Enter username: ");
                     login(name);
                     break;
                 }
@@ -65,6 +67,8 @@ public class Menu {
                 }
                 case 2: {
                     // PLAY BEJEWELED
+                    Bejeweled game = new Bejeweled();
+                    game.startGame();
                     break;
                 }
                 case 3: {

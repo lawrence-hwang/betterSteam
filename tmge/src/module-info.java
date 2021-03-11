@@ -1,0 +1,3 @@
+module tmge {
+    exports tmge;
+}

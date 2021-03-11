@@ -2,26 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52e17572-25fe-428e-9682-2bf2296f2963" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bejeweled/src/bejeweled/Bejeweled.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/menu/src/menu/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/menu/src/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmge/src/tmge/TileFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bejeweled/src/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmge/src/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmge/src/tmge/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bejeweled/bejeweled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bejeweled/bejeweled.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bejeweled/src/bejeweled/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bejeweled/src/bejeweled/Bejeweled.java" beforeDir="false" afterPath="$PROJECT_DIR$/bejeweled/src/bejeweled/Bejeweled.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/menu/menu/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/menu/menu/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/menu/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/menu/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/Events.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/tmge/tmge/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/GameManager.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/tmge/tmge/Grid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/tmge/tmge/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmge/src/tmge/Events.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/Matching.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/PieceType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/PlayerData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/Statistics.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/src/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/menu/src/menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/menu/src/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmge/src/tmge/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/tmge/src/tmge/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmge/src/tmge/GameManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tmge/src/tmge/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/tmge/src/tmge/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmge/src/tmge/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmge/src/tmge/Matching.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmge/src/tmge/PieceType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmge/src/tmge/PlayerData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmge/src/tmge/Statistics.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +39,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1pV8bfqCaHtflMxdqWI3H6kYzvJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">

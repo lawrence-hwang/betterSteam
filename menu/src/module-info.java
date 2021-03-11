@@ -1,2 +1,3 @@
 module menu {
+    requires bejeweled;
 }
