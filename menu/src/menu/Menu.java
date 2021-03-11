@@ -1,6 +1,7 @@
 package menu;
 
 import bejeweled.Bejeweled;
+import tfe.tfe;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -59,12 +60,14 @@ public class Menu {
 
     public void menuLoop() {
             System.out.println("MAIN MENU\n--------------------------------");
-            int input = getIntInput("What would you like to do?\n"+"1) Play Tetris\n" +
+            int input = getIntInput("What would you like to do?\n"+"1) Play 2048\n" +
                     "2) Play Bejeweled\n3) Settings\n4) High Scores\n5) Logout\nEnter option as integer: ");
 
             switch (input) {
                 case 1: {
-                    // PLAY TETRIS
+                    // PLAY 2048
+                    tfe tfe = new tfe();
+                    tfe.startGame();
                     break;
                 }
                 case 2: {
@@ -134,7 +137,7 @@ public class Menu {
 
     private void displayHighScores(){
         System.out.println("HIGH SCORES\n--------------------------------");
-        System.out.println("TETRIS\n----------------");
+        System.out.println("2040\n----------------");
         users.forEach((k,v) -> System.out.println(String.format("%s: %d",k,v[0])));
         System.out.println("BEJEWELED\n----------------");
         users.forEach((k,v) -> System.out.println(String.format("%s: %d\n",k,v[1])));
