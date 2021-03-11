@@ -3,6 +3,7 @@ package menu;
 import bejeweled.Bejeweled;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -12,14 +13,15 @@ public class Menu {
     boolean loggedIn;
     boolean RUNNING;
     private String currentUser;
-    private ArrayList<String> users;
+//    private ArrayList<String> users;
+    private HashMap<String, int[]> users;
 
     public Menu() {
         this.RUNNING = true;
         this.in = new Scanner(System.in);
         this.currentUser = null;
         this.loggedIn = false;
-        this.users = new ArrayList<String>();
+        this.users = new HashMap<String, int[]>();
     }
 
     public void mainLoop() {
@@ -69,6 +71,9 @@ public class Menu {
                     // PLAY BEJEWELED
                     Bejeweled game = new Bejeweled();
                     game.startGame();
+                    int highScore = game.quit();
+                    int[] updatedScores = {users.get(currentUser)[0], highScore};
+                    users.put(currentUser, updatedScores);
                     break;
                 }
                 case 3: {
@@ -77,6 +82,7 @@ public class Menu {
                 }
                 case 4: {
                     // SHOW HIGH SCORES
+                    displayHighScores();
                     break;
                 }
                 case 5: {
@@ -87,9 +93,16 @@ public class Menu {
             }
     }
 
+    private void displayHighScores(){
+        System.out.println("HIGH SCORES\n--------------------------------");
+        System.out.println("TETRIS\n----------------");
+        users.forEach((k,v) -> System.out.println(String.format("%s: %d",k,v[0])));
+        System.out.println("BEJEWELED\n----------------");
+        users.forEach((k,v) -> System.out.println(String.format("%s: %d\n",k,v[1])));
+    }
     private void login(String username) {
-        if (!users.contains(username)) {
-            users.add(username);
+        if (!users.containsKey(username)) {
+            users.put(username, new int[2]);
         }
         loggedIn = true;
         currentUser = username;

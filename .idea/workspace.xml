@@ -2,26 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52e17572-25fe-428e-9682-2bf2296f2963" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bejeweled/src/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmge/src/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmge/src/tmge/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bejeweled/src/bejeweled/Bejeweled.java" beforeDir="false" afterPath="$PROJECT_DIR$/bejeweled/src/bejeweled/Bejeweled.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/bejeweled/bejeweled/Bejeweled.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/bejeweled/bejeweled/Bejeweled.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/production/menu/menu/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/menu/menu/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/menu/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/menu/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/Events.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/tmge/tmge/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/GameManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/tmge/tmge/Grid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/Matching.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/PieceType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/PlayerData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/Statistics.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/menu/src/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/menu/src/menu/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/menu/src/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmge/src/tmge/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/tmge/src/tmge/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmge/src/tmge/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/tmge/src/tmge/Grid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
