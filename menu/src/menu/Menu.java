@@ -258,7 +258,7 @@ public class Menu {
         users.forEach((k,v) -> System.out.println(String.format("%s: %d",k,v[0])));
         System.out.println();
         System.out.println("BEJEWELED\n----------------");
-        users.forEach((k,v) -> System.out.println(String.format("%s: %d\n",k,v[1])));
+        users.forEach((k,v) -> System.out.println(String.format("%s: %d",k,v[1])));
         System.out.println();
     }
     private void login(String username) {
