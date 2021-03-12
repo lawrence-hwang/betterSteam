@@ -5,8 +5,6 @@ import tmge.Grid;
 import tmge.TileFactory;
 
 import java.util.ArrayList;
-import java.util.Random;
-import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -15,6 +13,7 @@ public class tfe extends tmge.Game{
     private Grid grid;
     private TileFactory tileFactory;
     private int score;
+    private int highestReached;
     private boolean boardFilled;
     public static int MAX_ROWS = 4;
     public static int MAX_COLS = 4;
@@ -24,7 +23,8 @@ public class tfe extends tmge.Game{
 
     public tfe() {
         boardFilled = false;
-        score = 2;
+        highestReached = 2;
+        score = 0;
         this.tileFactory = new TileFactory();
         this.initGrid();
         this.toDelete = new ArrayList<Cell>();
@@ -145,7 +145,7 @@ public class tfe extends tmge.Game{
         return false;
     }
 
-    public void moveBlocks(int dir){
+    private void moveBlocks(int dir){
         switch(dir){
             case 1: { // UP
                 for(int j = 0; j < MAX_COLS; j++){
@@ -242,7 +242,7 @@ public class tfe extends tmge.Game{
         }
     }
 
-    public boolean canCombine(Cell A, Cell B){
+    private boolean canCombine(Cell A, Cell B){
         // Checking if values in both cells are the same
         int valueA = grid.getCell(A.getRow(), A.getCol());
         int valueB = grid.getCell(B.getRow(), B.getCol());
@@ -253,15 +253,16 @@ public class tfe extends tmge.Game{
     }
 
     // A to B
-    public void combine(Cell A, Cell B){
+    private void combine(Cell A, Cell B){
         int doubleValue = grid.getCell(B.getRow(), B.getCol()) * 2;
         grid.setCell(B.getRow(), B.getCol(), doubleValue);
         grid.setCell(A.getRow(), A.getCol(), 0);
 
-        if(doubleValue > score){ score = doubleValue; }
+        if(doubleValue > highestReached){ highestReached = doubleValue; }
+        score += doubleValue;
     }
 
-    public void moveBlock(Cell A, Cell B){
+    private void moveBlock(Cell A, Cell B){
         int tempVal = grid.getCell(A.getRow(), A.getCol());
         grid.setCell(B.getRow(), B.getCol(), tempVal);
         grid.setCell(A.getRow(), A.getCol(), 0);
@@ -285,13 +286,14 @@ public class tfe extends tmge.Game{
 
     @Override
     public void checkGameover() {
-        GAME_ACTIVE = !boardFilled && score < goal;
+        GAME_ACTIVE = !boardFilled && highestReached < goal;
     }
 
     @Override
     public void displayGrid() {
         System.out.print(grid);
-        System.out.println(String.format("Current Highest Block: %d",score));
+        System.out.println(String.format("Current Highest Block: %d",highestReached));
+        System.out.println(String.format("Current Score: %d", score));
         System.out.println(String.format("Goal: %d", goal));
     }
 
@@ -308,7 +310,7 @@ public class tfe extends tmge.Game{
     @Override
     public int quit() { return score; }
 
-    public void fillTwo(){
+    private void fillTwo(){
         // Set two cells to value 2 to get beginning board
         // 90% fill 2, 10% fill 4
         ArrayList<Cell> emptyCells = new ArrayList<Cell>();
