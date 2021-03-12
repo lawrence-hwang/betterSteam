@@ -18,10 +18,12 @@ public class Bejeweled extends tmge.Game {
     public static int MAX_ROWS = 8;
     public static int MAX_COLS = 8;
 
-    private int movesLeft = 30;
+    private int movesLeft = 20;
     private int level = 1;
     private int goal = 500;
     private boolean GAME_ACTIVE = true;
+    private Cell tempCellSource;
+    private Cell tempCellSwap;
 
     public Bejeweled() {
         score = 0;
@@ -33,13 +35,20 @@ public class Bejeweled extends tmge.Game {
     @Override
     public void startGame() {
         removeAllMatches(false);
-        do {
+
+        while (GAME_ACTIVE) {
             displayGrid();
+
+            checkContinue();
+            if (!GAME_ACTIVE) {
+                break;
+            }
+
             handleInput();
             matchCheck();
             checkGameover();
-            checkContinue();
-        } while (GAME_ACTIVE);
+        }
+
         quit();
     }
 
@@ -51,12 +60,12 @@ public class Bejeweled extends tmge.Game {
                 grid.setCell(i, j, tileFactory.getNewTile(1, 8));
             }
         }
-        tempGrid = grid;
+        tempGrid = new Grid(MAX_ROWS, MAX_COLS);
     }
 
     public void checkContinue() {
-        System.out.println("Continue playing?");
-        System.out.println("1) Continue");
+        System.out.println("Action: ");
+        System.out.println("1) Move");
         System.out.println("2) Quit");
         int choice = getIntInput("Enter integer option: ", 1, 2);
         GAME_ACTIVE = (choice == 2) ? false : true;
@@ -75,17 +84,17 @@ public class Bejeweled extends tmge.Game {
             dirNumber = getIntInput("Enter direction: ", 1, 4);
         } while (!validMove(rowNumber, colNumber, dirNumber));
         // DO THE SWAP
-        movesLeft--;
         swap(rowNumber, colNumber, dirNumber);
     }
 
     private void swap(int row, int col, int dir) {
-        tempGrid = grid;
+        tempCellSource = new Cell(row, col);
         switch (dir) {
             case 1: {
                 // SWAP UP
                 int tempFirst = grid.getGrid()[row][col];
                 int tempSecond = grid.getGrid()[row-1][col];
+                tempCellSwap = new Cell(row-1, col);
                 grid.setCell(row-1, col, tempFirst);
                 grid.setCell(row, col, tempSecond);
                 break;
@@ -94,6 +103,7 @@ public class Bejeweled extends tmge.Game {
                 // SWAP DOWN
                 int tempFirst = grid.getGrid()[row][col];
                 int tempSecond = grid.getGrid()[row+1][col];
+                tempCellSwap = new Cell(row+1, col);
                 grid.setCell(row+1, col, tempFirst);
                 grid.setCell(row, col, tempSecond);
                 break;
@@ -102,6 +112,7 @@ public class Bejeweled extends tmge.Game {
                 // SWAP LEFT
                 int tempFirst = grid.getGrid()[row][col];
                 int tempSecond = grid.getGrid()[row][col-1];
+                tempCellSwap = new Cell(row, col-1);
                 grid.setCell(row, col-1, tempFirst);
                 grid.setCell(row, col, tempSecond);
                 break;
@@ -110,6 +121,7 @@ public class Bejeweled extends tmge.Game {
                 // SWAP RIGHT
                 int tempFirst = grid.getGrid()[row][col];
                 int tempSecond = grid.getGrid()[row][col+1];
+                tempCellSwap = new Cell(row, col+1);
                 grid.setCell(row, col+1, tempFirst);
                 grid.setCell(row, col, tempSecond);
                 break;
@@ -155,9 +167,13 @@ public class Bejeweled extends tmge.Game {
         }
 
         if (toDelete.size() == 0) {
-            grid = tempGrid;
-            System.out.println("No match!");
+            int swapValue = grid.getGrid()[tempCellSwap.getRow()][tempCellSwap.getCol()];
+            int sourceValue = grid.getGrid()[tempCellSource.getRow()][tempCellSource.getCol()];
+            grid.setCell(tempCellSource.getRow(), tempCellSource.getCol(), swapValue);
+            grid.setCell(tempCellSwap.getRow(), tempCellSwap.getCol(), sourceValue);
+            System.out.println("No match!\n");
         } else {
+            movesLeft--;
             removeAllMatches(true);
         }
     }
@@ -173,15 +189,14 @@ public class Bejeweled extends tmge.Game {
             }
 
             if (toDelete.size() == 0) {
-                grid = tempGrid;
                 CHECKING = false;
             } else {
-                markDeletion(); // CHANGE TO -1
+                markDeletion(); // CHANGES JEWELS TO DELETE TO -1
                 clearDeletions(FLAG); // Sets -1 to 0; Set POINT_FLAG == true if rewarding points
                 for (int i = 0; i < grid.getGrid()[0].length; i++) {
                     gravityColumn(i); // SHIFT EACH COLUMN DOWN
                 }
-                genNewTiles();
+                genNewTiles(); // GENERATES NEW TILES FROM TOP
             }
         }
     }
@@ -210,7 +225,7 @@ public class Bejeweled extends tmge.Game {
             if (score >= goal) {
                 level++;
                 goal+=500;
-                movesLeft = 30;
+                movesLeft = 20;
             }
         }
         toDelete.clear();
@@ -265,6 +280,7 @@ public class Bejeweled extends tmge.Game {
         int current = -1;
 
         for (int i = 0; i < grid.getGrid().length; i++) {
+
             if (grid.getGrid()[i][col] != current) {
                 if (tempToDelete.size() >= 3) {
                     toDelete.addAll(tempToDelete);

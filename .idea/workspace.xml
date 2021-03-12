@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52e17572-25fe-428e-9682-2bf2296f2963" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bejeweled/src/bejeweled/Bejeweled.java" beforeDir="false" afterPath="$PROJECT_DIR$/bejeweled/src/bejeweled/Bejeweled.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/menu/menu/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/menu/menu/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/menu/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/menu/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/tmge/tmge/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/tmge/tmge/Grid.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menu/src/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/menu/src/menu/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,9 +48,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="15" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager" selected="Application.Menu">
