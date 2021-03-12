@@ -24,7 +24,7 @@ public class tfe extends tmge.Game{
 
     public tfe() {
         boardFilled = false;
-        score = 0;
+        score = 2;
         this.tileFactory = new TileFactory();
         this.initGrid();
         this.toDelete = new ArrayList<Cell>();
@@ -35,8 +35,10 @@ public class tfe extends tmge.Game{
         do{
             displayGrid();
             handleInput();
-            fillTwo();
-            checkGameover();
+            if(GAME_ACTIVE){
+                fillTwo();
+                checkGameover();
+            }
         } while(GAME_ACTIVE);
         quit();
     }
@@ -59,11 +61,13 @@ public class tfe extends tmge.Game{
         int dirNumber;
         do {
             System.out.println("Select direction of to move blocks");
-            System.out.println("1) Up\n2) Down\n3) Left\n4) Right");
-            dirNumber = getIntInput("Enter direction: ", 1, 4);
+            System.out.println("1) Up\n2) Down\n3) Left\n4) Right\n5) Quit");
+            dirNumber = getIntInput("Enter direction: ", 1, 5);
         } while (!validMove(dirNumber));
-        // DO THE SWIPE
-        moveBlocks(dirNumber);
+        if(GAME_ACTIVE){
+            // DO THE SWIPE
+            moveBlocks(dirNumber);
+        }
     }
 
     private boolean validMove(int dir) {
@@ -71,11 +75,14 @@ public class tfe extends tmge.Game{
             case 1: { // UP
                 for(int i = 1; i < MAX_ROWS; i++){
                     for(int j = 0; j < MAX_COLS; j++){
-                        int currCell = grid.getCell(i, j);
-                        if(grid.getCell(i - 1, j) == 0 && currCell != 0){
-                            if(grid.getCell(i - 1, j) == currCell){
-                                return true;
-                            }
+//                        int currCell = grid.getCell(i, j);
+//                        if(grid.getCell(i - 1, j) == 0 && currCell != 0){
+//                            if(grid.getCell(i - 1, j) == currCell){
+//                                return true;
+//                            }
+//                        }
+                        if(grid.getCell(i - 1, j) == 0){
+                            return true;
                         }
                     }
                 }
@@ -84,11 +91,14 @@ public class tfe extends tmge.Game{
             case 2: { // DOWN
                 for(int i = 0; i < MAX_ROWS - 1; i++){
                     for(int j = 0; j < MAX_COLS; j++){
-                        int currCell = grid.getCell(i, j);
-                        if(grid.getCell(i + 1, j) == 0 && currCell != 0){
-                            if(grid.getCell(i + 1, j) == currCell){
-                                return true;
-                            }
+//                        int currCell = grid.getCell(i, j);
+//                        if(grid.getCell(i + 1, j) == 0 && currCell != 0){
+//                            if(grid.getCell(i + 1, j) == currCell){
+//                                return true;
+//                            }
+//                        }
+                        if(grid.getCell(i + 1, j) == 0){
+                            return true;
                         }
                     }
                 }
@@ -97,11 +107,14 @@ public class tfe extends tmge.Game{
             case 3: { // LEFT
                 for(int i = 0; i < MAX_ROWS; i++){
                     for(int j = 1; j < MAX_COLS; j++){
-                        int currCell = grid.getCell(i, j);
-                        if(grid.getCell(i, j -1) == 0 && currCell != 0){
-                            if(grid.getCell(j - 1, j) == currCell){
-                                return true;
-                            }
+//                        int currCell = grid.getCell(i, j);
+//                        if(grid.getCell(i, j -1) == 0 && currCell != 0){
+//                            if(grid.getCell(j - 1, j) == currCell){
+//                                return true;
+//                            }
+//                        }
+                        if(grid.getCell(i, j -1) == 0){
+                            return true;
                         }
                     }
                 }
@@ -110,15 +123,22 @@ public class tfe extends tmge.Game{
             case 4: { // RIGHT
                 for(int i = 0; i < MAX_ROWS; i++){
                     for(int j = 0; j < MAX_COLS - 1; j++){
-                        int currCell = grid.getCell(i, j);
-                        if(grid.getCell(i, j + 1) == 0 && currCell != 0){
-                            if(grid.getCell(j + 1, j) == currCell){
-                                return true;
-                            }
+//                        int currCell = grid.getCell(i, j);
+//                        if(grid.getCell(i, j + 1) == 0 && currCell != 0){
+//                            if(grid.getCell(j + 1, j) == currCell){
+//                                return true;
+//                            }
+//                        }
+                        if(grid.getCell(i, j + 1) == 0){
+                            return true;
                         }
                     }
                 }
                 break;
+            }
+            case 5: {
+                GAME_ACTIVE = false;
+                return true;
             }
         }
         System.out.print("Invalid direction!\nRe-");
@@ -237,6 +257,8 @@ public class tfe extends tmge.Game{
         int doubleValue = grid.getCell(B.getRow(), B.getCol()) * 2;
         grid.setCell(B.getRow(), B.getCol(), doubleValue);
         grid.setCell(A.getRow(), A.getCol(), 0);
+
+        if(doubleValue > score){ score = doubleValue; }
     }
 
     public void moveBlock(Cell A, Cell B){
@@ -284,9 +306,7 @@ public class tfe extends tmge.Game{
     }
 
     @Override
-    public int quit() {
-        return 0;
-    }
+    public int quit() { return score; }
 
     public void fillTwo(){
         // Set two cells to value 2 to get beginning board
