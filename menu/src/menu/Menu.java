@@ -66,9 +66,51 @@ public class Menu {
             switch (input) {
                 case 1: {
                     // PLAY 2048
-                    tfe tfe = new tfe();
-                    tfe.startGame();
-                    break;
+                    input = getIntInput("Single or Multiplayer?\n"+"1) Single\n" + "2) Multiplayer\nEnter option as integer: ");
+                    switch(input){
+                        case 1:{
+                            tfe game = new tfe();
+                            game.startGame();
+                            int highScore = game.quit();
+                            int[] updatedScores = {users.get(currentUser)[0], highScore};
+                            users.put(currentUser, updatedScores);
+                            break;
+                        }
+                        case 2:{
+                            // Get other player name
+                            String name = getStringInput("Enter player 2's name: ");
+                            // Add other player to list of users
+                            if (!users.containsKey(name)) {
+                                users.put(name, new int[2]);
+                            }
+                            // Begin player 1 game
+                            tfe game = new tfe();
+                            game.startGame();
+                            int highScore = game.quit();
+                            int[] updatedScores = {users.get(currentUser)[0], highScore};
+                            users.put(currentUser, updatedScores);
+
+                            // Begin player 2 game
+                            System.out.println("It's now " + name + "'s turn to play!");
+                            game = new tfe();
+                            game.startGame();
+                            int highScore2 = game.quit();
+                            int[] updatedScores2 = {users.get(name)[0], highScore2};
+                            users.put(name, updatedScores2);
+
+                            //Print winner
+                            if(highScore > highScore2){
+                                System.out.println(currentUser + " wins with a block score of " + highScore + " / 2048 over " + name + "'s block score of " + highScore2 + " / 2048!");
+                            }
+                            else if(highScore2 > highScore){
+                                System.out.println(name + " wins with a block score of " + highScore2 + " / 2048 over " + currentUser + "'s block score of " + highScore + " / 2048!");
+                            }
+                            else {
+                                System.out.println("Wow, you both tied with block scores of " + highScore + " / 2048! Nice job!");
+                            }
+                            break;
+                        }
+                    }
                 }
                 case 2: {
                     // PLAY BEJEWELED
