@@ -174,15 +174,12 @@ public class Menu {
                     switch (input){
                         case 1:{
                             //Here we change user name
-                            System.out.println("change name - FILL OUT LATER");
-
+                            changeUserName();
                             break;
                         }
                         case 2:{
                             //Here we clear high score...
-                            System.out.println("score cleared - FILL OUT LATER");
-
-                            
+                            clearHighScore();
                             break;
                         }
                     }
@@ -199,6 +196,60 @@ public class Menu {
                     break;
                 }
             }
+    }
+
+    private void clearHighScore () {
+        String userToChange = getStringInput("Enter username of scores to clear: ");
+        if (!users.containsKey(userToChange)) {
+            System.out.println("Error: User does not exist\n");
+        } else {
+            int choice = -1;
+            while (!(choice > 0) || !(choice < 5)) {
+                choice = getIntInput("Options: \n1) Clear all\n2) Clear 2040\n3) Clear Bejeweled\n4) Cancel\nEnter selection: ");
+                if (choice > 4 || choice < 1) {
+                    System.out.println("Error: Invalid choice");
+                } else {
+                    break;
+                }
+            }
+
+            switch (choice) {
+                case 1: {
+                    int[] clearedScores = {0,0};
+                    users.put(userToChange, clearedScores);
+                    break;
+                }
+                case 2: {
+                    int[] clearedScores = {0, users.get(userToChange)[1]};
+                    users.put(userToChange, clearedScores);
+                    break;
+                }
+                case 3: {
+                    int[] clearedScores = {users.get(userToChange)[0], 0};
+                    users.put(userToChange, clearedScores);
+                    break;
+                }
+                case 4: {
+                    System.out.println(String.format("No scores cleared for %s\n", userToChange));
+                    break;
+                }
+            }
+        }
+    }
+
+    private void changeUserName() {
+        String userToChange = getStringInput("Enter username to change: ");
+        if (!users.containsKey(userToChange)) {
+            System.out.println("Error: User does not exist");
+        } else {
+            String newNameChange = getStringInput("Enter new username: ");
+            int[] savedScores = new int[2];
+            savedScores[0] = users.get(userToChange)[0];
+            savedScores[1] = users.get(userToChange)[1];
+            users.put(newNameChange, savedScores);
+            users.remove(userToChange);
+            System.out.println(String.format("%s successfully changed to %s\n",userToChange,newNameChange));
+        }
     }
 
     private void displayHighScores(){
