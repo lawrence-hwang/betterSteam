@@ -125,12 +125,13 @@ public class Menu {
                     switch (input){
                         case 1:{
                             //Here we change user name
+                            System.out.println("change name - FILL OUT LATER");
 
                             break;
                         }
                         case 2:{
                             //Here we clear high score...
-                            System.out.println("score cleared");
+                            System.out.println("score cleared - FILL OUT LATER");
 
                             
                             break;
