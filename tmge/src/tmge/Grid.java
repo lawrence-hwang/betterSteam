@@ -30,8 +30,13 @@ public class Grid {
             for (int j = 0; j<grid[i].length; j++) {
                 result += String.format(" %d ", grid[i][j]);
             }
-            result+="\n";
+            result+=" |\n";
         }
+        result += "    ";
+        for (int m = 0; m<grid[0].length; m++) {
+            result += "---";
+        }
+        result+="\n";
         return result;
     }
 

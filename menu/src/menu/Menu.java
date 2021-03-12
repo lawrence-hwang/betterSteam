@@ -119,7 +119,24 @@ public class Menu {
                     }
                 }
                 case 3: {
-                    // SETTINGS
+
+                    // SETTINGS - User should be able to change their name and clear high score
+                    input = getIntInput("Settings\n"+"1) Change name\n" + "2) Clear high score\nEnter option as integer: ");
+                    switch (input){
+                        case 1:{
+                            //Here we change user name
+                            System.out.println("change name - FILL OUT LATER");
+
+                            break;
+                        }
+                        case 2:{
+                            //Here we clear high score...
+                            System.out.println("score cleared - FILL OUT LATER");
+
+                            
+                            break;
+                        }
+                    }
                     break;
                 }
                 case 4: {
