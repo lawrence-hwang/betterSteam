@@ -23,6 +23,9 @@ public class Menu {
         this.currentUser = null;
         this.loggedIn = false;
         this.users = new HashMap<String, int[]>();
+        // String = username
+        // [0,0] = [0] high score of TFE
+        //         [1] high score of bejeweled
     }
 
     public void mainLoop() {
@@ -72,7 +75,7 @@ public class Menu {
                             tfe game = new tfe();
                             game.startGame();
                             int highScore = game.quit();
-                            int[] updatedScores = {users.get(currentUser)[0], highScore};
+                            int[] updatedScores = {highScore, users.get(currentUser)[1]};
                             users.put(currentUser, updatedScores);
                             break;
                         }
@@ -87,7 +90,8 @@ public class Menu {
                             tfe game = new tfe();
                             game.startGame();
                             int highScore = game.quit();
-                            int[] updatedScores = {users.get(currentUser)[0], highScore};
+//                            int[] updatedScores = {users.get(currentUser)[0], highScore};
+                            int[] updatedScores = {highScore, users.get(currentUser)[1]};
                             users.put(currentUser, updatedScores);
 
                             // Begin player 2 game
@@ -95,7 +99,8 @@ public class Menu {
                             game = new tfe();
                             game.startGame();
                             int highScore2 = game.quit();
-                            int[] updatedScores2 = {users.get(name)[0], highScore2};
+//                            int[] updatedScores2 = {users.get(name)[0], highScore2};
+                            int[] updatedScores2 = {highScore2, users.get(name)[1]};
                             users.put(name, updatedScores2);
 
                             //Print winner
@@ -111,6 +116,7 @@ public class Menu {
                             break;
                         }
                     }
+                    break;
                 }
                 case 2: {
                     // PLAY BEJEWELED
@@ -159,6 +165,7 @@ public class Menu {
                             break;
                         }
                     }
+                    break;
                 }
                 case 3: {
 
